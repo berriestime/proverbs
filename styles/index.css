@@ -1,0 +1,513 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 14px;
+  color: rgb(105, 74, 59);
+  font-weight: 500;
+  font-family: "Times New Roman", Times, serif;
+  background-color: rgb(243, 243, 243);
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+
+.about {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 137%;
+  color: rgb(255, 242, 200);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(0, 0, 0, 0.8)), url("../assets/images/braigel2.jpg");
+  color: black;
+}
+.about p {
+  margin: 10px;
+}
+.about p::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(64, 46, 37);
+  display: inline-block;
+  margin-right: 5px;
+}
+.about__container {
+  display: flex;
+  justify-content: center;
+}
+.about__item {
+  display: flex;
+  margin: 20px 15px;
+  border-radius: 20px;
+}
+.about__title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: rgb(64, 46, 37);
+  font-size: 25px;
+  font-weight: bold;
+  padding-top: 30px;
+}
+.about__title h2 {
+  margin: 10px;
+}
+.about__image {
+  max-width: 200px;
+  margin: 10px;
+}
+.about__image img {
+  width: 100%;
+  border-radius: 10px;
+}
+.about__period {
+  padding-top: 10px;
+  font-weight: bold;
+  color: rgb(64, 46, 37);
+  font-size: 20px;
+  border-bottom: 0.1px solid rgb(64, 46, 37);
+}
+.about__body {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  flex: 1 1 auto;
+}
+.about__subtitle {
+  color: rgb(64, 46, 37);
+  font-size: 25px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  border-bottom: 0.1px solid rgb(64, 46, 37);
+}
+.about__text {
+  color: rgb(105, 74, 59);
+  color: rgb(221, 221, 219);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 137%;
+  margin: 0px 15px;
+}
+
+.image__background {
+  background: url("../assets/images/braigel8.jpeg") center/cover no-repeat fixed;
+  min-height: 100vh;
+}
+
+.quiz {
+  background-image: url("../assets/images/braigel6.jpeg");
+}
+.quiz__container {
+  min-height: 800px;
+}
+
+.row {
+  color: rgb(105, 74, 59);
+  color: rgb(71, 50, 49);
+  padding: 70px 20px;
+}
+.row__name {
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+.row__item {
+  display: flex;
+  justify-content: center;
+}
+.row__title {
+  font-size: 25px;
+  line-height: 105%;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 20px;
+  color: rgb(105, 74, 59);
+}
+.row__body {
+  display: flex;
+  justify-content: center;
+  padding: 30px -15px;
+}
+.row__button {
+  border-radius: 37px;
+  margin: 40px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.2px;
+  padding: 5px 15px;
+  height: 50px;
+  width: 150px;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 105%;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: rgb(103, 103, 87);
+  color: rgb(105, 74, 59);
+  border: 1px solid rgb(94, 68, 66);
+}
+.row__button a {
+  color: rgb(248, 248, 243);
+}
+.row__button:hover {
+  box-shadow: 2px 2px 2px rgb(157, 157, 133);
+  transition: all 0.3s ease 0s;
+  background-color: rgb(153, 187, 167);
+}
+.row__button:hover a {
+  color: rgb(105, 74, 59);
+}
+.row__button-e:hover {
+  box-shadow: 2px 2px 2px rgb(71, 50, 49);
+  background: rgb(103, 103, 87);
+  color: rgb(229, 220, 210);
+}
+
+#popup {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.consult {
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+}
+.consult__form, .consult__form2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1000px;
+  position: relative;
+  background-color: #5b7a77;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 20px;
+}
+.consult__image {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  z-index: 20;
+}
+.consult__image img {
+  width: 100%;
+  border-radius: 5px;
+}
+.consult__image:hover {
+  display: block;
+  transform: scale(3, 3) translate(0px, 40px);
+  transition: all 0.8s ease 0s;
+}
+.consult__text {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 57px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: rgb(105, 74, 59);
+}
+
+.btn {
+  border-radius: 37px;
+  margin: 10px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.2px;
+  padding: 3px 12px;
+  min-height: 40px;
+  width: 120px;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 105%;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: rgb(203, 156, 74);
+  border: 0.1px solid rgb(94, 68, 66);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 5px #425b69;
+  transition: all 0.3s ease 0s;
+  background: rgb(209, 172, 108);
+  color: rgb(229, 220, 210);
+}
+
+.close-popup {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(203, 156, 74);
+  color: rgb(71, 50, 49);
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+}
+
+.close-popup:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.questions {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.questions__item {
+  display: block;
+  background: rgb(203, 156, 74);
+  width: 900px;
+  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.questions__item p {
+  font-size: 18px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::-moz-list-bullet {
+  list-style-type: none;
+}
+
+summary::marker {
+  display: none;
+}
+
+summary {
+  display: block;
+  padding: 10px 30px 10px 10px;
+  line-height: 20px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+  color: rgb(71, 50, 49);
+  color: rgb(105, 74, 59);
+  border-bottom: none;
+}
+
+summary:before {
+  top: 15px;
+  right: 10px;
+  color: transparent;
+  background: url("../assets/images/free-icon-font-angle-down-3916886.svg") no-repeat 50% 50%/1em 1em;
+  width: 1em;
+  height: 1em;
+  content: "";
+  position: absolute;
+  transition: transform 0.5s;
+}
+
+details[open] > summary:before {
+  transform: scale(1, -1);
+  transition: all 0.3s ease 0s;
+}
+
+summary ~ * {
+  padding: 0px 10px 0 10px;
+}
+
+details[open] summary ~ * {
+  animation: sweep 0.9s ease-in-out;
+  color: #425b69;
+}
+
+summary:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  border-bottom: none;
+}
+
+#popup2 {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#popup2:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.consult__row {
+  display: flex;
+  margin: 10px -15px;
+}
+.consult__column {
+  flex: 0 1 33%;
+  padding: 5px;
+  min-height: 400px;
+}
+
+.consult-item:hover {
+  box-shadow: 5px 5px 5px #425b69;
+  transition: all 0.3s ease 0s;
+  outline: solid 4px #f08700;
+}
+
+.consult-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  height: 100%;
+}
+.consult-item a {
+  color: rgb(118, 63, 37);
+}
+.consult-item__light {
+  box-shadow: 0 0 35px #9acbe3;
+  box-shadow: 0 0 35px #7bea81;
+}
+.consult-item_f {
+  background-color: rgb(224, 198, 169);
+}
+.consult-item_s {
+  background-color: rgb(255, 242, 200);
+}
+.consult-item_t {
+  background-color: rgb(196, 208, 183);
+}
+.consult-item__content {
+  flex: 1 1 auto;
+  border-bottom: 0.1px solid rgb(105, 74, 59);
+}
+.consult-item__text1, .consult-item__text2, .consult-item__text3 {
+  font-size: 18px;
+}
+.consult-item__answer {
+  padding-top: 10px;
+  font-size: 25px;
+}
+.consult-item__text1, .consult-item__text2, .consult-item__text3, .consult-item__back1, .consult-item__back2, .consult-item__back3 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: rgb(105, 74, 59);
+  padding: 20px 10px;
+}
+.consult-item__back1, .consult-item__back2, .consult-item__back3 {
+  font-size: 20px;
+}
+.consult-item__hidden {
+  display: none;
+}
+.consult-item__button1, .consult-item__button2, .consult-item__button3 {
+  cursor: pointer;
+  border-radius: 37px;
+  margin: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 36px;
+  letter-spacing: 0.2px;
+  padding: 2px 20px;
+  min-height: 40px;
+  width: 100px;
+  letter-spacing: 0.2px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 105%;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(105, 74, 59);
+  border: 0.1px solid rgb(105, 74, 59);
+  background-color: transparent;
+}
+.consult-item__button1:hover {
+  background: rgb(129, 143, 116);
+  color: rgb(229, 220, 210);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+.consult-item__button2:hover {
+  background: rgb(142, 107, 85);
+  color: rgb(229, 220, 210);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+.consult-item__button3:hover {
+  background: #dfa04f;
+  color: rgb(229, 220, 210);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}/*# sourceMappingURL=index.css.map */

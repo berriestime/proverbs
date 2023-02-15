@@ -4,15 +4,83 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./assets/scripts/modal.js"></script>
+
     <script src="./assets/scripts/pictures.js"></script>
     <script src="./assets/scripts/quiz.js"></script>
-    <link rel="stylesheet" href="./styles/css/index.css" />
+    <script src="./assets/scripts/modal.js"></script>
+    <link rel="stylesheet" href="./styles/index.css" />
     <title>Document</title>
   </head>
   <body>
-    <h1>Галерея</h1>
-    <h2>test</h2>
+    <div class="wrapper">
+      <div class="about">
+        <div class="about__container container">
+          <div class="about__column">
+            <div class="about__title">
+              <h2>"Фламандские пословицы" Брейгеля</h2>
+              <h2>с расшифровкой:</h2>
+              <h2>мир вверх тормашками"</h2>
+            </div>
+            <div class="about__item about__item_f">
+              <div class="about__image">
+                <img src="./assets/images/braigel-portret.jpeg" alt="" />
+              </div>
+              <div class="about__body">
+                <div class="about__subtitle">Питер Брейгель Старший</div>
+                <div class="about__period">
+                  Нидерланды
+                  <p>1525−1569</p>
+                </div>
+              </div>
+            </div>
+            <div class="about__text">
+              <h3>
+                Картины великого нидерландца XVI века Питера Брейгеля Старшего
+                (нидерл. Pieter Bruegel de Oude) – удовольствие для терпеливых.
+                Десятки, если не сотни крошечных странных фигурок. Суетливых,
+                занятых разнообразнейшими делами, но при этом потрясающе
+                безликих. Попробуйте сосчитать их – и немедленно собьётесь со
+                счета.
+              </h3>
+              <h3>
+                "Фламандские пословицы" - небольшая (117 на 164 см) картина,
+                написанная маслом по дереву, представляет собой шедевр,
+                визуализирующий более сотни пословиц. "Птицы одного полёта",
+                "Совать палки в колёса", "Сидеть как на иголках" - мы все знаем
+                и употребляем эти поговорки.
+              </h3>
+              <h3>
+                Художник известен тщательной продуманностью своих работ, и то,
+                что поначалу кажется просто деревенской сценой с широким
+                спектром персонажей, вскоре оказывается чем-то более
+                значительным. Это «энциклопедия всей человеческой мудрости,
+                собранной под шутовским колпаком», которая остроумно высмеивает
+                тщеславие и глупость многих человеческих поступков.
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="image__background"></div>
+      <div class="quiz">
+        <div class="quiz__container container">
+          <div class="row">
+            <div class="row__body">
+              <div class="row__item row__item-5">
+                <div class="row__button">
+                  <a href="#popup">Нажми меня!</a>
+                </div>
+                <div class="row__button">
+                  <a href="#popup2">Нажми меня!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <button onclick="location.href='./quiz.html'">Пройти тест</button>
+    <div class="consult" id="popup2"></div>
+    <div class="consult" id="popup"></div>
   </body>
 </html>
