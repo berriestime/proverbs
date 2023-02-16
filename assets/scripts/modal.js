@@ -1,6 +1,6 @@
 let json = `[{
 
-    "Image": "../images/bragel1.jpg",
+    "Image": "./assets./images/braigel3.jpg",
     "number": 1,
     
     "discriptionRight": "В 1559 году, когда создавалось это произведение, красный считался цветом греха, а голубой часто означал обман или глупость. ",
@@ -15,7 +15,7 @@ let json = `[{
    
   },
   {
-    "Image": "../images/braigel3.jpg",
+    "Image": "./assets/images/braigel4.jpg",
     "number": 2,
     
     "discriptionRight": "В 1559 году, когда создавалось это произведение, красный считался цветом греха, а голубой часто означал обман или глупость. ",
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let fragments = JSON.parse(json);
   console.log(fragments);
 
-  let fragment = fragments[2];
+  let fragment = fragments[1];
   let parentNode = document.createElement("div");
   parentNode.classList.add("consult__form");
 

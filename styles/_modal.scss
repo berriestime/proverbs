@@ -143,7 +143,48 @@ body {
     fixed;
   min-height: 100vh;
 }
-//-----------------------------------------------------------------------------------
+//---------------------------------composition--------------------------------------------------
+
+.composition {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 137%;
+  background-color: rgb(165, 146, 84);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__title {
+    color: rgb(64, 46, 37);
+    font-size: 35px;
+    font-weight: bold;
+    padding: 20px;
+    text-decoration: transparent;
+  }
+
+  &__body {
+    display: grid;
+    justify-content: center;
+    gap: 0px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    margin: 10px 0px;
+  }
+
+  &__item {
+    //padding: 0px 5px;
+    height: 100%;
+    img {
+      width: 100%;
+    }
+  }
+}
+.container {
+}
+
+//--------------------------------------------------------------------------------------
 .quiz {
   background-image: url("../assets/images/braigel6.jpeg");
   &__container {
