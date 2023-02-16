@@ -236,21 +236,23 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  opacity: 0;
-  visibility: hidden;
 }
 
 #popup:target {
-  opacity: 1;
-  visibility: visible;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .consult {
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 15;
+}
+.consult__close {
+  display: none;
 }
 .consult__form, .consult__form2 {
   display: flex;
@@ -290,36 +292,6 @@ body {
   text-transform: uppercase;
   margin-bottom: 5px;
   color: rgb(105, 74, 59);
-}
-
-.btn {
-  border-radius: 37px;
-  margin: 10px 0px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: 0.2px;
-  padding: 3px 12px;
-  min-height: 40px;
-  width: 120px;
-  text-decoration: none;
-  letter-spacing: 0.2px;
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 105%;
-  text-transform: uppercase;
-  text-align: center;
-  background-color: rgb(203, 156, 74);
-  border: 0.1px solid rgb(94, 68, 66);
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 5px 5px 5px #425b69;
-  transition: all 0.3s ease 0s;
-  background: rgb(209, 172, 108);
-  color: rgb(229, 220, 210);
 }
 
 .close-popup {
@@ -390,7 +362,7 @@ summary {
 }
 
 summary:before {
-  top: 15px;
+  top: 10px;
   right: 10px;
   color: transparent;
   background: url("../assets/images/free-icon-font-angle-down-3916886.svg") no-repeat 50% 50%/1em 1em;
