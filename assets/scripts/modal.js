@@ -352,7 +352,6 @@ conctraction.addEventListener("click", (event) => {
 
     let closeNode = document.createElement("a");
     closeNode.classList.add("close-popup");
-    closeNode.href = "#popup-close";
     closeNode.textContent = `X`;
 
     let rowNode = document.createElement("div");
@@ -380,11 +379,16 @@ conctraction.addEventListener("click", (event) => {
     parentNode.append(rowNode);
     parentNode.append(closeNode);
 
-    let popup = document.querySelector("#popup");
+    let popup = document.querySelector(".consult");
+    console.log(popup);
     popup = popup.append(parentNode);
 
+    console.log(popup);
+
     closeNode.addEventListener("click", (event) => {
-      //popup.classList.add("close");
+      console.log(event.target);
+      let closePopup = event.target.parentNode;
+      closePopup.style = "display: none";
     });
   }
 });
