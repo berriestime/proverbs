@@ -1,3 +1,60 @@
 body{
-    background:rgb(153, 40, 157);
+    background-color: #e3e3e3;
+}
+
+.question-image{
+    width: 600px;
+}
+
+.options-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.progress-bar{
+    display: flex;
+    flex-direction: row;
+}
+
+.progress-bar-item{
+    width: 10px;
+    padding: 3px;
+}
+
+.progress-bar-not-colored{
+    filter: invert(79%) sepia(1%) saturate(0%) hue-rotate(153deg) brightness(85%) contrast(88%);
+}
+
+.progress-bar-colored{
+    filter: invert(60%) sepia(41%) saturate(243%) hue-rotate(169deg) brightness(83%) contrast(85%);
+}
+
+.btn-start {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  cursor: pointer;
+  font-family: arial,sans-serif;
+  font-size: 14px;
+  height: 36px;
+  line-height: 27px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+}
+
+.btn-start:hover {
+  border-color: #dadce0;
+  box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+  color: #202124;
+}
+
+.btn-start:focus {
+  border-color: #4285f4;
+  outline: none;
 }
