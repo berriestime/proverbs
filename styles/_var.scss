@@ -1,0 +1,99 @@
+.indexheader{
+    width: 100vw;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  
+  background-image:  url(../assets/images/proverbs.jpg) ;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   grid-template-rows: repeat(4, 1fr);
+ text-align: center;
+}
+.text{
+    font-family: "Yeseva One";
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0%;
+   
+}
+.wapper{
+    padding-top: 56px;
+    background-color:rgba(56, 50, 42, 0.775);
+}
+.indexheader__plus{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+}
+.indexheader__znaki{
+    font-size: 136px;
+    color: white;
+}
+.indexheader__gif{
+    width: 90%;
+    margin-top: auto;
+    padding-top:auto;
+    margin-bottom: 0%;
+    padding-bottom: 0;
+}
+.indexabout
+{
+    padding: 54px;
+    background-image:url(../assets/images/beb95faacb6c552be300a9855f7803f7.jpg) ;
+text-align: center;
+}
+.text-about{
+    font-family: "Yeseva One";
+    font-size: 26px;
+    text-align: center;
+    color: rgb(8, 8, 8);
+    line-height: 1.4;
+    margin: 0;
+    padding: 0%;
+}
+.span{
+    color:rgb(150, 22, 19);
+}
+.indexabout__imgPortret{
+    width: 90%;
+    text-align: end;
+    // border: 2px rgba(79, 52, 6, 0.415) solid;
+
+}
+.indexabout__imgKartina{
+    width: 90%;
+    text-align:center;
+    margin:auto;
+    // border: 2px rgba(79, 52, 6, 0.415) solid;
+
+}
+.knopka{
+    justify-self:center;
+    margin: auto;
+    
+}
+.proverka{
+    text-align: start;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 20%;
+
+}
+.text-header{
+    color:rgb(150, 22, 19);
+    text-align: start; 
+}
+.text-proverka{
+    font-size: 26px;
+    text-align: start;
+    color: rgb(8, 8, 8);
+    padding: 20px;
+}
+.strela{
+    height:26px ;
+}
