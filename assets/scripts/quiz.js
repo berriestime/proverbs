@@ -56,7 +56,7 @@ function generateQuestion() {
   }
   shuffleArray(limitedArr);
   const picture = dataFullProverbs[selected].picture;
-  quizContainer.innerHTML = `<img class="question-image" src="./assets/images/${picture}" alt="" />`;
+  quizContainer.innerHTML = `<img class="question-image" src="./assets/images/${picture}.jpg" alt="" />`;
   questionText.innerHTML = `<span>Какое описание подходит к пословице: "${keyTrue}"</span>`;
   optionsContainer.innerHTML = `<button onclick="checkAnswer(this)" class="option" data-true-val="${valueTrue}">${limitedArr[0]}</button>`;
   optionsContainer.innerHTML += `<button onclick="checkAnswer(this)" class="option" data-true-val="${valueTrue}">${limitedArr[1]}</button>`;
@@ -81,6 +81,12 @@ function printScore() {
   alert("Your score is:" + score);
   btnStart.style.display = "block";
   btnStart.innerHTML = "Пройти тест еще раз!";
+  btnStart.addEventListener("click", (e) => {
+    e.preventDefault();
+    score = 0;
+    numberOfQuestions = 1;
+    generateQuestion();
+  });
 }
 
 function checkAnswer(sender) {
@@ -98,7 +104,9 @@ function checkAnswer(sender) {
 
 function updateProgressBar(numberOfQuestions) {
   const items = document.querySelectorAll(".progress-bar-item");
-  console.log(items);
+  // items[0].classList.remove(".progress-bar-not-colored");
+  // items[numberOfQuestions].classList.add(".progress-bar-true");
+  // console.log(items[0]);
   for (let i = 0; i < numberOfQuestions; i++) {
     items[i].classList.add("progress-bar-colored");
     console.log(items[i]);
