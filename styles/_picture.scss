@@ -1,3 +1,226 @@
 // h2{
 //     background-color: aqua;
 // }
+
+//   .picture {
+//   width: 95vw;
+//   height: 67vw;
+//   padding: 0;
+//   margin: 0;
+  
+// //   background-image:  url(../assets/images/proverbs.jpg) ;
+//   background-repeat: no-repeat;
+//   background-size: 100%;
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   grid-template-rows: repeat(4, 1fr);
+// }
+
+// .picture__modal{
+//     // width: 22.5vw;
+//     // height:16vw;
+   
+    
+// }
+// .picture__modal:hover 
+// {
+//     border: 1px solid rgb(78, 46, 4);
+//     opacity: 0.6;
+   
+// }
+body{
+    margin: 0%;
+    padding: 0;
+}
+.verbButton{
+  padding:30px;
+  border:1px solid rgb(27, 110, 140);
+  border-radius: 10px;
+  background-color: rgb(76, 182, 236);
+  font-family: "Yeseva One";
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    line-height: 1.4;
+    margin: 10px;
+}
+.proverbButtons{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.containerM {
+  width:min-content;
+  padding: 20px;
+  display: block;
+
+  justify-content: center;
+  align-items: center;
+  font-family: "Tahoma", sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+  color: #164a44;
+  background-color: #d5ac6159;
+  
+  border:solid 1px #164a44 ;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 20px;
+
+}
+// стилизация блоков
+body {
+  
+}
+
+.tasks__title {
+  margin: 50px 20px 20px 20px;
+
+  text-align: center;
+  text-transform: uppercase;
+ }
+
+.tasks__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.tasks__item {
+  transition: background-color 0.5s;
+  margin: 5px;
+  padding: 5px;
+
+  text-align: center;
+  border: 2px dashed #b2d9d0;
+  border-radius: 10px;
+  cursor: move;
+  background-color: #dff2ef;
+  transition: background-color 0.5s;
+}
+.picturеНeader{
+  color: #C14318;
+  font-size: 25px;
+}
+
+.selected {
+  opacity: 0.6;
+}
+.tasks__img{
+  width: 100%;
+}
+.gif{
+  width: 100%;
+}
+// модальное окно
+.modalDialog {
+position: fixed;
+font-family: Arial, Helvetica, sans-serif;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background: rgba(70, 52, 4, 0.549);
+  z-index: 99999;
+  -webkit-transition: opacity 400ms ease-in;
+ -moz-transition: opacity 400ms ease-in;
+ transition: opacity 400ms ease-in;
+ display: none;
+//  pointer-events: none;
+  }
+  .modalDialog:target {
+     display: block;
+    //  pointer-events: auto;
+    }
+
+    .modalDialog > div {
+     width:min-content;
+     position: relative;
+     margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+    }
+    .close {
+          background: #606061;
+          color: #FFFFFF;
+          line-height: 25px;
+          position: absolute;
+          right: -12px;
+          text-align: center;
+          top: -10px;
+          width: 24px;
+          text-decoration: none;
+          font-weight: bold;
+          -webkit-border-radius: 12px;
+          -moz-border-radius: 12px;
+          border-radius: 12px;
+          -moz-box-shadow: 1px 1px 3px #000;
+          -webkit-box-shadow: 1px 1px 3px #000;
+          box-shadow: 1px 1px 3px #000;
+      }
+      
+      .close:hover { background: #00d9ff; }
+      
+// аниммвция кнопок 
+
+.middle{
+  position:relative;
+  // top: 50%;
+  // left: 50%;
+  transform: translate(0%,0%);
+  display: none;
+  width: 100%;
+  
+}
+.btn{
+  position: relative;
+  display: block;
+  color:#C14318;
+  font-size: 18px;
+  // font-family: "montserrat";
+  text-decoration: none;
+  text-align: center;
+  margin: 30px 0;
+  border: 2px solid #a24810;
+  padding: 14px 60px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 1s all ease;
+}
+.btn::before{
+  background:#a24810;
+  
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.btn1::before{
+  width: 0%;
+  height: 100%;
+  
+ 
+}
+
+.btn1:hover::before{
+  width: 100%;
+}
+.btn1:hover{
+  color:#f8f5f3;
+  font-weight: bold;
+}
+
+// скрываем объяснения и кнопки 
+.explanations{
+  display:none;
+}

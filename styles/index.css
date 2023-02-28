@@ -1,3 +1,321 @@
+@charset "UTF-8";
+body {
+  margin: 0%;
+  padding: 0;
+}
+
+.verbButton {
+  padding: 30px;
+  border: 1px solid rgb(27, 110, 140);
+  border-radius: 10px;
+  background-color: rgb(76, 182, 236);
+  font-family: "Yeseva One";
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  line-height: 1.4;
+  margin: 10px;
+}
+
+.proverbButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.containerM {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  padding: 20px;
+  display: block;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Tahoma", sans-serif;
+  font-size: 18px;
+  line-height: 25px;
+  color: #164a44;
+  background-color: rgba(213, 172, 97, 0.3490196078);
+  border: solid 1px #164a44;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.tasks__title {
+  margin: 50px 20px 20px 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.tasks__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.tasks__item {
+  -webkit-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  border: 2px dashed #b2d9d0;
+  border-radius: 10px;
+  cursor: move;
+  background-color: #dff2ef;
+  transition: background-color 0.5s;
+}
+
+.picturеНeader {
+  color: #C14318;
+  font-size: 25px;
+}
+
+.selected {
+  opacity: 0.6;
+}
+
+.tasks__img {
+  width: 100%;
+}
+
+.gif {
+  width: 100%;
+}
+
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(70, 52, 4, 0.549);
+  z-index: 99999;
+  -webkit-transition: opacity 400ms ease-in;
+  -o-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  display: none;
+}
+
+.modalDialog:target {
+  display: block;
+}
+
+.modalDialog > div {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  position: relative;
+  margin: 10% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 10px;
+  background: #fff;
+  background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+  background: #00d9ff;
+}
+
+.middle {
+  position: relative;
+  -webkit-transform: translate(0%, 0%);
+      -ms-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
+  display: none;
+  width: 100%;
+}
+
+.btn {
+  position: relative;
+  display: block;
+  color: #C14318;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: center;
+  margin: 30px 0;
+  border: 2px solid #a24810;
+  padding: 14px 60px;
+  text-transform: uppercase;
+  overflow: hidden;
+  -webkit-transition: 1s all ease;
+  -o-transition: 1s all ease;
+  transition: 1s all ease;
+}
+
+.btn::before {
+  background: #a24810;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
+  -webkit-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.btn1::before {
+  width: 0%;
+  height: 100%;
+}
+
+.btn1:hover::before {
+  width: 100%;
+}
+
+.btn1:hover {
+  color: #f8f5f3;
+  font-weight: bold;
+}
+
+.explanations {
+  display: none;
+}
+
+.indexheader {
+  width: 100vw;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  background-image: url(../assets/images/proverbs.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: grid;
+  text-align: center;
+}
+
+.text {
+  font-family: "Yeseva One";
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0%;
+}
+
+.wapper {
+  padding-top: 56px;
+  background-color: rgba(56, 50, 42, 0.775);
+}
+
+.indexheader__plus {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+}
+
+.indexheader__znaki {
+  font-size: 136px;
+  color: white;
+}
+
+.indexheader__gif {
+  width: 90%;
+  margin-top: auto;
+  padding-top: auto;
+  margin-bottom: 0%;
+  padding-bottom: 0;
+}
+
+.indexabout {
+  padding: 54px;
+  background-image: url(../assets/images/beb95faacb6c552be300a9855f7803f7.jpg);
+  text-align: center;
+}
+
+.text-about {
+  font-family: "Yeseva One";
+  font-size: 26px;
+  text-align: center;
+  color: rgb(8, 8, 8);
+  line-height: 1.4;
+  margin: 0;
+  padding: 0%;
+}
+
+.span {
+  color: rgb(150, 22, 19);
+}
+
+.indexabout__imgPortret {
+  width: 90%;
+  text-align: end;
+}
+
+.indexabout__imgKartina {
+  width: 90%;
+  text-align: center;
+  margin: auto;
+}
+
+.knopka {
+  justify-self: center;
+  margin: auto;
+}
+
+.proverka {
+  text-align: start;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 20%;
+}
+
+.text-header {
+  color: rgb(150, 22, 19);
+  text-align: start;
+}
+
+.text-proverka {
+  font-size: 26px;
+  text-align: start;
+  color: rgb(8, 8, 8);
+  padding: 20px;
+}
+
+.strela {
+  height: 26px;
+}
+=======
 *,
 *::before,
 *::after {
