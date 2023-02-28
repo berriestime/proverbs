@@ -164,3 +164,4 @@ fetch('./assets/json/pictures.json')
             tasksListElement.insertBefore(activeElement, nextElement);
         });
     })
+
