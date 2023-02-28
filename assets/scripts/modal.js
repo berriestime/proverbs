@@ -277,14 +277,14 @@ conctraction.addEventListener("click", (event) => {
     // рисуем окно------------------------
 
     let parentNode = document.createElement("div");
-    parentNode.classList.add("consult__form");
+    parentNode.classList.add("modal__form");
 
     let titleNode = document.createElement("div");
-    titleNode.classList.add("consult__text");
+    titleNode.classList.add("modal__text");
     titleNode.textContent = "здесь скрыты пословицы:";
 
     let imageNode = document.createElement("div");
-    imageNode.classList.add("consult__image");
+    imageNode.classList.add("modal__image");
 
     let fragmentNode = document.createElement("img");
     fragmentNode.src = `./assets/images/${urlNumber}.gif`;
@@ -296,11 +296,11 @@ conctraction.addEventListener("click", (event) => {
     closeNode.textContent = `X`;
 
     let rowNode = document.createElement("div");
-    rowNode.classList.add("questions");
+    rowNode.classList.add("modal__questions");
 
     for (let i = 0; i < proverbsFragment.length; i++) {
       let detailsNode = document.createElement("details");
-      detailsNode.classList.add("questions__item");
+      detailsNode.classList.add("modal__questions-item");
 
       let summaryNode = document.createElement("summary");
       summaryNode.textContent = `${proberbsName[i]}`;
@@ -320,7 +320,7 @@ conctraction.addEventListener("click", (event) => {
     parentNode.append(rowNode);
     parentNode.append(closeNode);
 
-    let popup = document.querySelector(".consult");
+    let popup = document.querySelector(".modal");
 
     console.log(popup);
     popup = popup.append(parentNode);

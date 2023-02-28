@@ -132,23 +132,18 @@ body._lock {
   left: 0;
 }
 
-.consult {
+.modal {
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 15;
-  overflow-y: auto;
 }
-.consult__close {
+.modal__close {
   display: none;
 }
-.consult__active {
-  opacity: 0;
-  visibility: hidden;
-}
-.consult__form, .consult__form2 {
+.modal__form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -159,22 +154,22 @@ body._lock {
   border-radius: 20px;
   padding: 20px;
 }
-.consult__image {
+.modal__image {
   display: flex;
   justify-content: center;
   width: 200px;
   z-index: 20;
 }
-.consult__image img {
+.modal__image img {
   width: 100%;
   border-radius: 5px;
 }
-.consult__image:hover {
+.modal__image:hover {
   display: block;
   transform: scale(3, 3) translate(0px, 40px);
   transition: all 0.8s ease 0s;
 }
-.consult__text {
+.modal__text {
   display: flex;
   align-items: center;
   height: 50px;
@@ -186,6 +181,27 @@ body._lock {
   text-transform: uppercase;
   margin-bottom: 5px;
   color: rgb(105, 74, 59);
+}
+.modal__questions {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow: auto;
+}
+.modal__questions-item {
+  display: block;
+  background: rgb(203, 156, 74);
+  width: 900px;
+  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.modal__questions-item p {
+  font-size: 18px;
 }
 
 .close-popup {
@@ -205,28 +221,6 @@ body._lock {
 .close-popup:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.questions {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-.questions__item {
-  display: block;
-  background: rgb(203, 156, 74);
-  width: 900px;
-  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  border-radius: 8px;
-  overflow: hidden;
-}
-.questions__item p {
-  font-size: 18px;
 }
 
 summary::-webkit-details-marker {

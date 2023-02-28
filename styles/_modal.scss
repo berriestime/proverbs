@@ -141,27 +141,24 @@ body._lock {
   width: 100%;
   top: 0;
   left: 0;
+  //overflow-y: auto;
 }
 
-.consult {
+.modal {
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 15;
-  overflow-y: auto;
+  //overflow: auto;
 
   &__close {
     display: none;
   }
-  &__active {
-    opacity: 0;
-    visibility: hidden;
-  }
+ 
 
-  &__form,
-  &__form2 {
+  &__form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -171,9 +168,7 @@ body._lock {
     margin: 20px;
     border-radius: 20px;
     padding: 20px;
-    //overflow: auto;
-    //overflow-y: auto;
-    //overflow-y: scroll;
+   
   }
 
   &__image {
@@ -206,6 +201,31 @@ body._lock {
     margin-bottom: 5px;
     color: rgb(105, 74, 59);
   }
+  &__questions {
+    //max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow: auto;
+    //overflow-y: scroll;
+  }
+  &__questions-item {
+    p {
+      font-size: 18px;
+    }
+    display: block;
+    background: rgb(203, 156, 74);
+
+    width: 900px;
+    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    overflow: hidden;
+  }
 }
 
 .close-popup {
@@ -226,31 +246,6 @@ body._lock {
 .close-popup:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.questions {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-
-  &__item {
-    p {
-      font-size: 18px;
-    }
-    display: block;
-    background: rgb(203, 156, 74);
-
-    width: 900px;
-    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1),
-      0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    border-radius: 8px;
-    overflow: hidden;
-  }
 }
 
 summary::-webkit-details-marker {
