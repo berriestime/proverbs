@@ -32,6 +32,9 @@ body {
   background-color: rgba(243, 243, 243, 1);
   cursor: pointer;
 }
+body._lock {
+  overflow: hidden;
+}
 
 .wrapper {
   display: flex;
@@ -147,6 +150,8 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 15;
+  overflow-y: auto;
+
   &__close {
     display: none;
   }
@@ -166,6 +171,9 @@ body {
     margin: 20px;
     border-radius: 20px;
     padding: 20px;
+    //overflow: auto;
+    //overflow-y: auto;
+    //overflow-y: scroll;
   }
 
   &__image {

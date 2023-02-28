@@ -30,6 +30,10 @@ body {
   cursor: pointer;
 }
 
+body._lock {
+  overflow: hidden;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -135,6 +139,7 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 15;
+  overflow-y: auto;
 }
 .consult__close {
   display: none;
