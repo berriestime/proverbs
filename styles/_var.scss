@@ -14,7 +14,7 @@
 }
 .text{
     font-family: "Yeseva One";
-    font-size: 50px;
+    font-size: 1em;
     text-align: center;
     color: white;
     line-height: 1.4;
@@ -96,4 +96,11 @@ text-align: center;
 }
 .strela{
     height:26px ;
+}
+
+@media screen and (min-width: 650px) {
+    .text{
+        font-size: 0.2em;}
+    .indexheader{
+        background-size: 100% auto;}
 }

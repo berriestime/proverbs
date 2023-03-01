@@ -20,19 +20,15 @@
              А ты знаешь, что за пословицы<br> здесь зашифрованы?</p>
          <div class="indexheader__plus"> 
              <img src="./assets/images/para.gif" class="indexheader__gif"> 
-             <img src="./assets/images/a7f96a555befdb6298acdbdab75090b8.png" class="knopka">
+             <img src="./assets/images/a7f96a555befdb6298acdbdab75090b8.png" class="knopka" onclick="location.href='modal.html'">
              <img src="./assets/images/mir.gif" class="indexheader__gif">
         </div> 
       </div>
     </div>
 
 
-      <div class="indexabout">
-        <!-- <div class="indexheader__plus">  -->
-        
-        <!-- <img src="./assets/images/portret.png" class="indexabout__imgPortret"> -->
+      <div class="indexabout">       
         <img src="./assets/images/proverbsmin.jpg" class="indexabout__imgKartina">  
-      <!-- </div> -->
         <p class="text text-about">
         Это картина <span class="span"> «Фламандские пословицы» </span> это не просто картина, это
         «энциклопедия всей человеческой мудрости, собранной под шутовским колпаком»
@@ -44,12 +40,19 @@
        <p class="text text-proverka"><img src="./assets/images/strela.png" class="strela">зачем женщина привязывает черта к подушке</p>
        <p class="text text-proverka"><img src="./assets/images/strela.png" class="strela">почему рыцарь в доспехах играет с котом</p>
        <p class="text text-header"> Тогда время проверить все ли ты запомнил?</p>
-       <img src="./assets/images/proverka.png" class="knopka">
+       <div class="middle"> 
+        <a href="picture.html"  class = "btn btn1">собрать пословицу</a>
+        <a href = "quiz.html" class = "btn btn1"> пройти тест </a> 
+        <a href = "modal.html" class = "btn btn1"> изучить пословицы </a> 
+       </div>
     
         </div>
   
    
   
   </div>
+  <script>
+    document.querySelector(`.middle`).style = "display:block";
+  </script>
   </body>
 </html>
