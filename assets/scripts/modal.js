@@ -274,6 +274,9 @@ conctraction.addEventListener("click", (event) => {
     let proberbsInfo = proverbsFragment.map((a) => a.info);
     console.log(proberbsInfo); //  массив из инфо этих пословиц
 
+    let proberbsPlace = proverbsFragment.map((a) => a.place);
+    console.log(proberbsPlace); //  массив из place этих пословиц
+
     // рисуем окно------------------------
 
     let parentNode = document.createElement("div");
@@ -306,10 +309,14 @@ conctraction.addEventListener("click", (event) => {
       summaryNode.textContent = `${proberbsName[i]}`;
 
       let backNode = document.createElement("p");
-      backNode.textContent = `${proberbsInfo[i]}`;
+      backNode.textContent = `Значение: ${proberbsInfo[i]}`;
+
+      let backPlace = document.createElement("p");
+      backPlace.textContent = `Где искать: ${proberbsPlace[i]}`;
 
       detailsNode.append(summaryNode);
       detailsNode.append(backNode);
+      detailsNode.append(backPlace);
 
       rowNode.append(detailsNode);
     }
