@@ -7,17 +7,17 @@
     flex-direction: column;
 }
 
-.progress-bar{
+.progress__bar_quiz{
     display: flex;
     flex-direction: row;
 }
 
-.progress-bar-item{
-    width: 10px;
+.progress__bar__item__quiz{
+    width: 40px;
     padding: 3px;
 }
 
-.progress-bar-not-colored{
+.progress__bar__default{
     filter: invert(79%) sepia(1%) saturate(0%) hue-rotate(153deg) brightness(85%) contrast(88%);
 }
 
@@ -25,15 +25,15 @@
     filter: invert(60%) sepia(41%) saturate(243%) hue-rotate(169deg) brightness(83%) contrast(85%);
 }
 
-// .progress-bar-true{
-//     filter: invert(67%) sepia(34%) saturate(614%) hue-rotate(63deg) brightness(95%) contrast(97%);
-// }
+.progress__bar__true__quiz{
+    filter: invert(67%) sepia(34%) saturate(614%) hue-rotate(63deg) brightness(95%) contrast(97%);
+}
 
-// .progress-bar-false{
-//     filter: invert(47%) sepia(29%) saturate(4133%) hue-rotate(333deg) brightness(94%) contrast(85%);
-// }
+.progress__bar__false__quiz{
+    filter: invert(47%) sepia(29%) saturate(4133%) hue-rotate(333deg) brightness(94%) contrast(85%);
+}
 
-.btn-start {
+.btn__quiz__start {
   background-color: #f8f9fa;
   border: 1px solid #f8f9fa;
   border-radius: 4px;
@@ -61,4 +61,18 @@
 .btn-start:focus {
   border-color: #4285f4;
   outline: none;
+}
+
+.question__desrciption__quiz{
+  font-size: larger;
+}
+
+.container__quiz{
+  height: 100vh;
+  background-color: #fefefe;
+}
+
+.question__text__quiz{
+  display: flex;
+  flex-direction: column;
 }

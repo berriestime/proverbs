@@ -1,31 +1,43 @@
+const url = "./assets/json/pictures.json";
+let score = 0;
+const btnStart = document.querySelector(".btn__quiz__start");
+const optionsContainer = document.querySelector(".options-container");
+const questionText = document.querySelector(".question__text__quiz");
+const quizContainer = document.querySelector(".question__quiz__container");
+const progressBar = document.querySelector(".progress__bar__quiz");
+
 let alreadyDoneQuestions = [];
 let counter = 0;
-const btnStart = document.querySelector(".btn-start");
-const url = "./assets/json/pictures.json";
 let dataFullProverbs = "";
-let score = 0;
 let numberOfQuestions = 1;
-const optionsContainer = document.querySelector(".options-container");
-const questionText = document.querySelector(".question-text");
-const quizContainer = document.querySelector(".question-container");
-const progressBar = document.querySelector(".progress-bar");
 
 btnStart.addEventListener("click", (e) => {
   e.preventDefault();
   main();
 });
 
-async function getJson(url) {
-  let response = await fetch(url);
-  let data = await response.json();
-  return data;
-}
-
 async function main() {
-  dataFullProverbs = await getJson(url);
+  dataFullProverbs = await getJsonPromised(url);
   btnStart.style.display = "none";
   generateProgressBar();
   generateQuestion();
+}
+
+function getJsonPromised(url) {
+  return fetch(url).then((data) => data.json());
+}
+
+function generateProgressBar() {
+  for (let i = 1; i < 11; i++) {
+    progressBar.innerHTML += `
+    <img class="progress__bar__item__quiz progress__bar__default" id="progress-bar-${i}" src="./assets/svg/square.svg" alt="Индикатор прогресса" />`;
+  }
+}
+
+async function getJson(url) {
+  let response = await fetch(url); // еще почитать
+  let data = await response.json();
+  return data; //возвращается промис, а не дата
 }
 
 function generateQuestion() {
@@ -50,14 +62,20 @@ function generateQuestion() {
   let answersFull = dataFullProverbs.map((item) => item.info);
   shuffleArray(answersFull);
 
-  const limitedArr = [valueTrue];
-  for (let i = 1; i < 10; i++) {
-    limitedArr[i] = answersFull[i];
+  let limitedArr = [valueTrue];
+  for (let i = 1; i < 4; i++) {
+    if (answersFull[i] != [valueTrue]) {
+      limitedArr[i] = answersFull[i];
+    } else {
+      const tmp = i;
+      i++;
+      limitedArr[tmp] = answersFull[i];
+    }
   }
   shuffleArray(limitedArr);
   const picture = dataFullProverbs[selected].picture;
   quizContainer.innerHTML = `<img class="question-image" src="./assets/images/${picture}.jpg" alt="" />`;
-  questionText.innerHTML = `<span>Какое описание подходит к пословице: "${keyTrue}"</span>`;
+  questionText.innerHTML = `<span class="question__desrciption__quiz">Какое описание подходит к пословице:</span><span class="question__desrciption__quiz ">"${keyTrue}"</span>`;
   optionsContainer.innerHTML = `<button onclick="checkAnswer(this)" class="option" data-true-val="${valueTrue}">${limitedArr[0]}</button>`;
   optionsContainer.innerHTML += `<button onclick="checkAnswer(this)" class="option" data-true-val="${valueTrue}">${limitedArr[1]}</button>`;
   optionsContainer.innerHTML += `<button onclick="checkAnswer(this)" class="option" data-true-val="${valueTrue}">${limitedArr[2]}</button>`;
@@ -65,15 +83,16 @@ function generateQuestion() {
 }
 
 function shuffleArray(array) {
-  for (var i = array.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = array[i];
     array[i] = array[j];
     array[j] = temp;
   }
 }
 
 function printScore() {
+  alreadyDoneQuestions = "";
   optionsContainer.innerHTML = "";
   questionText.innerHTML = "";
   quizContainer.innerHTML = "";
@@ -90,11 +109,13 @@ function printScore() {
 }
 
 function checkAnswer(sender) {
-  updateProgressBar(numberOfQuestions);
-  numberOfQuestions++;
   if (sender.textContent == sender.dataset.trueVal) {
     score++;
+    updateProgressBar(numberOfQuestions, true);
+  } else {
+    updateProgressBar(numberOfQuestions, false);
   }
+  numberOfQuestions++;
   if (numberOfQuestions > 10) {
     printScore();
   } else {
@@ -102,20 +123,16 @@ function checkAnswer(sender) {
   }
 }
 
-function updateProgressBar(numberOfQuestions) {
-  const items = document.querySelectorAll(".progress-bar-item");
-  // items[0].classList.remove(".progress-bar-not-colored");
-  // items[numberOfQuestions].classList.add(".progress-bar-true");
+function updateProgressBar(numberOfQuestions, boolean) {
+  const items = document.querySelectorAll(".progress__bar__item__quiz");
+  items[numberOfQuestions - 1].classList.remove("progress__bar__default");
+  if (boolean) {
+    items[numberOfQuestions - 1].classList.add("progress__bar__true__quiz");
+  } else {
+    items[numberOfQuestions - 1].classList.add("progress__bar__false__quiz");
+  }
   // console.log(items[0]);
-  for (let i = 0; i < numberOfQuestions; i++) {
-    items[i].classList.add("progress-bar-colored");
-    console.log(items[i]);
-  }
-}
-
-function generateProgressBar() {
-  for (let i = 1; i < 11; i++) {
-    progressBar.innerHTML += `
-    <img class="progress-bar-item progress-bar-not-colored" id="progress-bar-${i}" src="./assets/svg/square.svg" alt="" />`;
-  }
+  // for (let i = 0; i < numberOfQuestions; i++) {
+  //   items[i].classList.add("progress-bar-colored");
+  // }
 }
