@@ -1,8 +1,6 @@
 fetch('./assets/json/pictures.json')
     .then(response => response.json())
     .then(proverbJson => {
-        console.log(proverbJson);
-
         const proverbText = JSON.stringify(proverbJson);
         const proverbObject = JSON.parse(proverbText);
         const proverbsCount = proverbObject.length;
@@ -17,19 +15,18 @@ fetch('./assets/json/pictures.json')
         const modalWindow = document.getElementById("openModal")
         const taskHeader = document.querySelector(`.picturеНeader`);
         const explanationsInfo = document.querySelector(`.explanations`);
-
-        console.log(proverbImg);
         taskImg.innerHTML = `<img src="./assets/images/${proverbImg}.gif" class="gif">`;
         explanationsInfo.innerHTML = ` <p class="pictureText"> где искать: ${proverbPlace} </p><p class="pictureText"> пословица означает "${proverbInfo}" </p>`;
 
         let arrVerbMix = [].concat(arrVerb);
+        // перемешиваю слова и рисую их
+        shuffle(arrVerbMix);
+        drawVerbs(arrVerbMix);
+
         // функция для нахождения слуцчайной поговорки
         function getRandom(n) {
             return Math.round(Math.random() * n);
         }
-        // перемешиваю слова и рисую их
-        shuffle(arrVerbMix);
-        drawVerbs(arrVerbMix);
 
         function shuffle(array) {
             array.sort(() => Math.random() - 0.5);
@@ -38,10 +35,9 @@ fetch('./assets/json/pictures.json')
         function drawVerbs(array) {
             let proverbVerbs = "";
             array.forEach(function (entry) {
-                proverbVerbs += ` <li class="tasks__item">${entry}</li>`;
+                proverbVerbs += `<li class="tasks__item">${entry}</li>`;
             })
             proverbButtons.innerHTML = proverbVerbs;
-
         }
 
         const tasksListElement = document.querySelector(`.tasks__list`);

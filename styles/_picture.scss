@@ -37,8 +37,8 @@ body{
   border:1px solid rgb(27, 110, 140);
   border-radius: 10px;
   background-color: rgb(76, 182, 236);
-  font-family: "Yeseva One";
-    font-size: 40px;
+  font-family: "Yeseva One";  
+    font-size: 1em;
     text-align: center;
     color: white;
     line-height: 1.4;
@@ -56,8 +56,8 @@ body{
 
   justify-content: center;
   align-items: center;
-  font-family: "Tahoma", sans-serif;
-  font-size: 18px;
+  font-family: "Yeseva One", sans-serif;
+  font-size: 1.125em;
   line-height: 25px;
   color: #164a44;
   background-color: #d5ac6159;
@@ -102,7 +102,7 @@ body {
 }
 .picturеНeader{
   color: #C14318;
-  font-size: 25px;
+  font-size: 1.5625em;
 }
 
 .selected {
@@ -114,58 +114,7 @@ body {
 .gif{
   width: 100%;
 }
-// модальное окно
-.modalDialog {
-position: fixed;
-font-family: Arial, Helvetica, sans-serif;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
-background: rgba(70, 52, 4, 0.549);
-  z-index: 99999;
-  -webkit-transition: opacity 400ms ease-in;
- -moz-transition: opacity 400ms ease-in;
- transition: opacity 400ms ease-in;
- display: none;
-//  pointer-events: none;
-  }
-  .modalDialog:target {
-     display: block;
-    //  pointer-events: auto;
-    }
 
-    .modalDialog > div {
-     width:min-content;
-     position: relative;
-     margin: 10% auto;
-    padding: 5px 20px 13px 20px;
-    border-radius: 10px;
-    background: #fff;
-    background: -moz-linear-gradient(#fff, #999);
-    background: -webkit-linear-gradient(#fff, #999);
-    background: -o-linear-gradient(#fff, #999);
-    }
-    .close {
-          background: #606061;
-          color: #FFFFFF;
-          line-height: 25px;
-          position: absolute;
-          right: -12px;
-          text-align: center;
-          top: -10px;
-          width: 24px;
-          text-decoration: none;
-          font-weight: bold;
-          -webkit-border-radius: 12px;
-          -moz-border-radius: 12px;
-          border-radius: 12px;
-          -moz-box-shadow: 1px 1px 3px #000;
-          -webkit-box-shadow: 1px 1px 3px #000;
-          box-shadow: 1px 1px 3px #000;
-      }
-      
-      .close:hover { background: #00d9ff; }
       
 // аниммвция кнопок 
 
@@ -188,6 +137,7 @@ background: rgba(70, 52, 4, 0.549);
   text-align: center;
   margin: 30px 0;
   border: 2px solid #a24810;
+  border-radius: 20px;
   padding: 14px 60px;
   text-transform: uppercase;
   overflow: hidden;
