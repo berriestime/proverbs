@@ -68,8 +68,8 @@ body._lock {
     color: rgb(64, 46, 37);
     font-size: 35px;
     font-weight: bold;
-    padding: 20px;
-    text-decoration: transparent;
+    padding: 10px 20px 30px 20px;
+    font-family: "Yeseva One";
   }
 
   &__body {
@@ -92,45 +92,49 @@ body._lock {
     box-shadow: 0px 10px 20px 5px rgb(41, 157, 124);
     transform: translateY(-5px);
   }
+  &__link {
+    position: relative;
+    transform: translate(0%, 0%);
+    width: 300px;
+  }
   &__button {
-    color: rgb(105, 74, 59);
-    color: rgba(71, 50, 49, 1);
-    padding: 70px 20px;
-    border-radius: 37px;
-    margin: 40px 0px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 0.2px;
-    padding: 5px 15px;
-    height: 50px;
-    width: 150px;
-    text-decoration: none;
-    letter-spacing: 0.2px;
+    border-radius: 35px;
+    position: relative;
+    display: block;
+    color: #c14318;
+    color: rgb(64, 46, 37);
+    font-size: 18px;
     font-weight: bold;
-    font-size: 15px;
-    line-height: 105%;
-    text-transform: uppercase;
+    text-decoration: none;
     text-align: center;
-    background-color: rgba(71, 50, 49, 1);
-    a {
-      color: rgb(248, 248, 243);
-    }
-
-    color: rgb(105, 74, 59);
-    border: 1px solid rgb(94, 68, 66);
+    margin: 30px 0;
+    border: 2px solid #a24810;
+    border: 2px solid rgb(64, 46, 37);
+    padding: 14px 60px;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 1s all ease;
   }
 
   &__button:hover {
-    box-shadow: 5px 5px 5px rgb(105, 74, 59);
+    color: #f8f5f3;
+    font-weight: bold;
+  }
+  &__button:hover::before {
+    width: 100%;
+  }
+  &__button::before {
+    background: #a24810;
+    width: 0%;
+    height: 100%;
 
-    transition: all 0.3s ease 0s;
-    background-color: rgb(153, 187, 167);
-    transform: translateY(-5px);
-    a {
-      color: rgb(105, 74, 59);
-    }
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: all 0.6s ease;
   }
 }
 
@@ -156,7 +160,6 @@ body._lock {
   &__close {
     display: none;
   }
- 
 
   &__form {
     display: flex;
@@ -168,7 +171,6 @@ body._lock {
     margin: 20px;
     border-radius: 20px;
     padding: 20px;
-   
   }
 
   &__image {
@@ -299,4 +301,3 @@ summary:hover {
   transition: 0.5s;
   border-bottom: none;
 }
-
