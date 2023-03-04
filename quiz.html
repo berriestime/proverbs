@@ -5,19 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/css/index.css" />
-    <title>Quiz</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="./assets/images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <title>Тест</title>
   </head>
   <body>
-    <button class="btn-start">Начать тест!</button>
-    <div class="panel">
-      <div class="progress-bar"></div>
-      </div>
-      <div class="question-container" id="question">
-      </div>
-      <div class="question-text"></div>
-      <div class="options-container">
+    <div class="wrapper__quiz">
+      <div class="progress__bar__quiz"></div>
+      <div class="question__quiz__container" id="question"></div>
+      <div class="question__text__quiz"></div>
+      <div class="options__container"></div>
+      <div class="print__result" style="display: none">
+        <div class="result__quiz"></div>
+        <div class="container__quiz"></div>
       </div>
     </div>
+    <script src="./assets/scripts/quiz.js"></script>
   </body>
-  <script src="./assets/scripts/quiz.js"></script>
 </html>

@@ -1,39 +1,47 @@
+const url = "./assets/json/pictures.json";
+let score = 0;
+const proverbsQuiz = {};
+const resultContainerQuiz = document.querySelector(".print__result");
+const optionsContainer = document.querySelector(".options__container");
+const questionText = document.querySelector(".question__text__quiz");
+const questionQuizContainer = document.querySelector(
+  ".question__quiz__container"
+);
+const progressBar = document.querySelector(".progress__bar__quiz");
+const resultQuiz = document.querySelector(".result__quiz");
+const quizContainer = document.querySelector(".container__quiz");
+
 let alreadyDoneQuestions = [];
 let counter = 0;
-const btnStart = document.querySelector(".btn-start");
-const url = "./assets/json/pictures.json";
 let dataFullProverbs = "";
-let score = 0;
 let numberOfQuestions = 1;
-const optionsContainer = document.querySelector(".options-container");
-const questionText = document.querySelector(".question-text");
-const quizContainer = document.querySelector(".question-container");
-const progressBar = document.querySelector(".progress-bar");
 
-btnStart.addEventListener("click", (e) => {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", function (event) {
   main();
 });
 
-async function getJson(url) {
-  let response = await fetch(url);
-  let data = await response.json();
-  return data;
-}
-
 async function main() {
-  dataFullProverbs = await getJson(url);
-  btnStart.style.display = "none";
+  dataFullProverbs = await getJsonPromised(url);
   generateProgressBar();
   generateQuestion();
 }
 
-function generateQuestion() {
-  const proverbs = {};
-  for (let p of dataFullProverbs) {
-    proverbs[p.name] = p.info;
+function getJsonPromised(url) {
+  return fetch(url).then((data) => data.json());
+}
+
+function generateProgressBar() {
+  for (let i = 1; i < 11; i++) {
+    progressBar.innerHTML += `
+    <img class="progress__bar__item__quiz progress__bar__default" id="progress-bar-${i}" src="./assets/images/square.svg" alt="Индикатор прогресса" />`;
   }
-  const keys = Object.keys(proverbs);
+}
+
+function generateQuestion() {
+  for (let p of dataFullProverbs) {
+    proverbsQuiz[p.name] = p.info;
+  }
+  const keys = Object.keys(proverbsQuiz);
   let selected;
   while (true) {
     selected = Math.floor(Math.random() * keys.length);
@@ -45,56 +53,66 @@ function generateQuestion() {
   const keyTrue = keys[selected];
   alreadyDoneQuestions[counter] = keyTrue;
   counter++;
-  const valueTrue = proverbs[keyTrue];
+  const valueTrue = proverbsQuiz[keyTrue];
 
   let answersFull = dataFullProverbs.map((item) => item.info);
   shuffleArray(answersFull);
 
-  const limitedArr = [valueTrue];
-  for (let i = 1; i < 10; i++) {
-    limitedArr[i] = answersFull[i];
+  let limitedArr = [valueTrue];
+  for (let i = 1; i < 4; i++) {
+    if (answersFull[i] != [valueTrue]) {
+      limitedArr[i] = answersFull[i];
+    } else {
+      const tmp = i;
+      i++;
+      limitedArr[tmp] = answersFull[i];
+    }
   }
   shuffleArray(limitedArr);
   const picture = dataFullProverbs[selected].picture;
-  quizContainer.innerHTML = `<img class="question-image" src="./assets/images/${picture}.jpg" alt="" />`;
-  questionText.innerHTML = `<span>Какое описание подходит к пословице: "${keyTrue}"</span>`;
-  optionsContainer.innerHTML = `<button onclick="checkAnswer(this)" class="option" data-true-val="${valueTrue}">${limitedArr[0]}</button>`;
-  optionsContainer.innerHTML += `<button onclick="checkAnswer(this)" class="option" data-true-val="${valueTrue}">${limitedArr[1]}</button>`;
-  optionsContainer.innerHTML += `<button onclick="checkAnswer(this)" class="option" data-true-val="${valueTrue}">${limitedArr[2]}</button>`;
-  optionsContainer.innerHTML += `<button onclick="checkAnswer(this)" class="option" data-true-val="${valueTrue}">${limitedArr[3]}</button>`;
+  questionQuizContainer.innerHTML = `<img class="question-image" src="./assets/images/${picture}.jpg" alt="картинка подсказка" />`;
+  questionText.innerHTML = `<span class="question__desrciption__quiz">Какое описание подходит к пословице:</span><span class="question__desrciption__quiz ">"${keyTrue}"</span>`;
+  optionsContainer.innerHTML = `<button onclick="checkAnswer(this)" class="tasks__item__quiz" data-true-val="${valueTrue}">${limitedArr[0]}</button>`;
+  optionsContainer.innerHTML += `<button onclick="checkAnswer(this)" class="tasks__item__quiz" data-true-val="${valueTrue}">${limitedArr[1]}</button>`;
+  optionsContainer.innerHTML += `<button onclick="checkAnswer(this)" class="tasks__item__quiz" data-true-val="${valueTrue}">${limitedArr[2]}</button>`;
+  optionsContainer.innerHTML += `<button onclick="checkAnswer(this)" class="tasks__item__quiz" data-true-val="${valueTrue}">${limitedArr[3]}</button>`;
 }
 
 function shuffleArray(array) {
-  for (var i = array.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var temp = array[i];
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = array[i];
     array[i] = array[j];
     array[j] = temp;
   }
 }
 
 function printScore() {
+  resultContainerQuiz.style.display = "flex";
+  resultQuiz.innerHTML = `<span class="score__quiz">Ваш результат: ${score}/10</span>`;
+  quizContainer.innerHTML = `<a onclick="refreshQuiz()" class="btn__quiz btn__quiz__1" id="btn__start__quiz">ПРОЙТИ ТЕСТ ЕЩЕ РАЗ</a><a href="./index.html" class="btn__quiz btn__quiz__1" id="btn__quizToIndex">НА ГЛАВНУЮ</a>`;
+}
+
+function refreshQuiz() {
+  main();
+  resultContainerQuiz.style.display = "none";
+  alreadyDoneQuestions = "";
   optionsContainer.innerHTML = "";
   questionText.innerHTML = "";
-  quizContainer.innerHTML = "";
+  questionQuizContainer.innerHTML = "";
   progressBar.innerHTML = "";
-  alert("Your score is:" + score);
-  btnStart.style.display = "block";
-  btnStart.innerHTML = "Пройти тест еще раз!";
-  btnStart.addEventListener("click", (e) => {
-    e.preventDefault();
-    score = 0;
-    numberOfQuestions = 1;
-    generateQuestion();
-  });
+  score = 0;
+  numberOfQuestions = 1;
 }
 
 function checkAnswer(sender) {
-  updateProgressBar(numberOfQuestions);
-  numberOfQuestions++;
   if (sender.textContent == sender.dataset.trueVal) {
     score++;
+    updateProgressBar(numberOfQuestions, true);
+  } else {
+    updateProgressBar(numberOfQuestions, false);
   }
+  numberOfQuestions++;
   if (numberOfQuestions > 10) {
     printScore();
   } else {
@@ -102,20 +120,16 @@ function checkAnswer(sender) {
   }
 }
 
-function updateProgressBar(numberOfQuestions) {
-  const items = document.querySelectorAll(".progress-bar-item");
-  // items[0].classList.remove(".progress-bar-not-colored");
-  // items[numberOfQuestions].classList.add(".progress-bar-true");
-  // console.log(items[0]);
-  for (let i = 0; i < numberOfQuestions; i++) {
-    items[i].classList.add("progress-bar-colored");
-    console.log(items[i]);
+function updateProgressBar(numberOfQuestions, boolean) {
+  const items = document.querySelectorAll(".progress__bar__item__quiz");
+  if (boolean) {
+    items[numberOfQuestions - 1].classList.add("progress__bar__true__quiz");
+  } else {
+    items[numberOfQuestions - 1].classList.add("progress__bar__false__quiz");
   }
 }
 
-function generateProgressBar() {
-  for (let i = 1; i < 11; i++) {
-    progressBar.innerHTML += `
-    <img class="progress-bar-item progress-bar-not-colored" id="progress-bar-${i}" src="./assets/svg/square.svg" alt="" />`;
-  }
+function newQuestion() {
+  console.log(proverbsQuiz);
+  console.log("(");
 }

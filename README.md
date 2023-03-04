@@ -1,21 +1,30 @@
-# proverbs
+# Фламандские народные пословицы и поговорки для детей и взрослых с игрой и тестом.
 
-1. Для компиляции scss используется плагин VSCode Live Sass Compiler (glenn2223.live-sass)
-2. В settings.json добавить правила:
+<a href="https://itgirlschool.com/">
+<img alt="itGirls" src="https://thumb.tildacdn.com/tild3830-6462-4765-b738-653735313730/-/resize/208x/-/format/webp/logo_white.png" width="165"/>
+</a>
 
-```
-"liveSassCompile.settings.generateMap": false,
-"liveSassCompile.settings.formats": [
-{
-    "format": "expanded",
-    "extensionName": ".css",
-    "savePath": "~/css"
-}
-],
-"liveSassCompile.settings.excludeList": [
-    "/**/node_modules/**",
-    "/.vscode/**"
-]
-```
+##Описание
 
-3. Для компиляции css нажать в VSCode внизу "Watch Sass" после чего скомпилится файл index.css
+Группой студентов из itGirls мы создали обучающий проект для детей и взрослых, который легко можно применить на школьных уроках МХК. Рассматривая картинки и читая фламандские пословицы Брейгеля (автора картины), можно узнать много полезных вещей, которые пригодятся в жизни.
+
+##Используемые технологии
+
+html, scss и JavaScript
+
+##Проведена работа:
+
+- со структуризацией css кода;
+- работа со стилями, с модальными окнами;
+- разработка игры на JavaScript;
+- подготовлен проверочный тест.
+
+##Использование:
+
+- Запустить проект через Git Pages
+- насладиться тврочеством Брейгеля :)
+
+##Над проектом работали:
+[@lenakokareva81](https://github.com/lenakokareva81)
+[@Galina-babayan](https://github.com/Galina-babayan)
+[@berriestime](https://github.com/berriestime)
