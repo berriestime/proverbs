@@ -1,3 +1,5 @@
+// let json;
+// json.src = `../../assets/json/pictures.json`;
 let json = `
 [
     {
@@ -249,16 +251,16 @@ let json = `
     }
 ]`;
 
-let proverbs = JSON.parse(json);
+const proverbs = JSON.parse(json);
 
-let conctraction = document.querySelector(".composition__body");
+const constraction = document.querySelector(".composition__body");
 
-conctraction.addEventListener("click", (event) => {
+constraction.addEventListener("click", (event) => {
   if (event.target.classList.contains("composition__image")) {
-    let urlNumber = event.target.parentNode.id;
+    const urlNumber = event.target.parentNode.id;
     console.log(urlNumber); // получаем номер
 
-    let proverbsFragment = [];
+    const proverbsFragment = [];
     for (let proverb of proverbs) {
       if (proverb.picture == urlNumber) {
         proverbsFragment.push(proverb);
@@ -267,49 +269,56 @@ conctraction.addEventListener("click", (event) => {
     }
     console.log(proverbsFragment); // получаем массив из соответствующих фрагменту пословиц по номеру
 
-    let proberbsName = proverbsFragment.map((a) => a.name);
+    const proberbsName = proverbsFragment.map((a) => a.name);
     console.log(proberbsName); // массив из имен этих пословиц
     console.log(proberbsName[2]);
 
-    let proberbsInfo = proverbsFragment.map((a) => a.info);
+    const proberbsInfo = proverbsFragment.map((a) => a.info);
     console.log(proberbsInfo); //  массив из инфо этих пословиц
+
+    const proberbsPlace = proverbsFragment.map((a) => a.place);
+    console.log(proberbsPlace); //  массив из place этих пословиц
 
     // рисуем окно------------------------
 
-    let parentNode = document.createElement("div");
+    const parentNode = document.createElement("div");
     parentNode.classList.add("modal__form");
 
-    let titleNode = document.createElement("div");
+    const titleNode = document.createElement("div");
     titleNode.classList.add("modal__text");
     titleNode.textContent = "здесь скрыты пословицы:";
 
-    let imageNode = document.createElement("div");
+    const imageNode = document.createElement("div");
     imageNode.classList.add("modal__image");
 
-    let fragmentNode = document.createElement("img");
+    const fragmentNode = document.createElement("img");
     fragmentNode.src = `./assets/images/${urlNumber}.gif`;
 
     imageNode.append(fragmentNode);
 
-    let closeNode = document.createElement("a");
+    const closeNode = document.createElement("a");
     closeNode.classList.add("close-popup");
     closeNode.textContent = `X`;
 
-    let rowNode = document.createElement("div");
+    const rowNode = document.createElement("div");
     rowNode.classList.add("modal__questions");
 
     for (let i = 0; i < proverbsFragment.length; i++) {
-      let detailsNode = document.createElement("details");
+      const detailsNode = document.createElement("details");
       detailsNode.classList.add("modal__questions-item");
 
-      let summaryNode = document.createElement("summary");
+      const summaryNode = document.createElement("summary");
       summaryNode.textContent = `${proberbsName[i]}`;
 
-      let backNode = document.createElement("p");
-      backNode.textContent = `${proberbsInfo[i]}`;
+      const backNode = document.createElement("p");
+      backNode.textContent = `Значение: "${proberbsInfo[i]}"`;
+
+      const backPlace = document.createElement("p");
+      backPlace.textContent = `Где искать: "${proberbsPlace[i]}"`;
 
       detailsNode.append(summaryNode);
       detailsNode.append(backNode);
+      detailsNode.append(backPlace);
 
       rowNode.append(detailsNode);
     }
@@ -330,7 +339,7 @@ conctraction.addEventListener("click", (event) => {
 
     closeNode.addEventListener("click", (event) => {
       console.log(event.target);
-      let closePopup = event.target.parentNode;
+      const closePopup = event.target.parentNode;
       closePopup.style = "display: none";
       document.body.classList.remove("_lock");
     });
