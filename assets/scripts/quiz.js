@@ -33,7 +33,7 @@ function getJsonPromised(url) {
 function generateProgressBar() {
   for (let i = 1; i < 11; i++) {
     progressBar.innerHTML += `
-    <img class="progress__bar__item__quiz progress__bar__default" id="progress-bar-${i}" src="./assets/svg/square.svg" alt="Индикатор прогресса" />`;
+    <img class="progress__bar__item__quiz progress__bar__default" id="progress-bar-${i}" src="./assets/images/square.svg" alt="Индикатор прогресса" />`;
   }
 }
 
