@@ -62,7 +62,6 @@ body._lock {
   }
   &__row {
     display: flex;
-    justify-content: space-around;
   }
   &__title {
     color: rgb(64, 46, 37);
@@ -70,6 +69,7 @@ body._lock {
     font-weight: bold;
     padding: 10px 20px 30px 20px;
     font-family: "Yeseva One";
+    margin-right: 40px;
   }
 
   &__body {
@@ -140,22 +140,18 @@ body._lock {
 
 //---------------------------------popup----------------------------------
 
-#popup {
+.modal {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  //overflow-y: auto;
-}
-
-.modal {
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 15;
-  //overflow: auto;
+  overflow: auto;
 
   &__close {
     display: none;
@@ -276,8 +272,8 @@ summary:before {
   top: 10px;
   right: 10px;
   color: transparent;
-  background: url("../assets/images/free-icon-font-angle-down-3916886.svg")
-    no-repeat 50% 50% / 1em 1em;
+  background: url("../assets/images/down_chevron_icon_250483.svg") no-repeat 50%
+    50% / 1em 1em;
   width: 1em;
   height: 1em;
   content: "";
