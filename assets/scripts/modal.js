@@ -1,5 +1,7 @@
-fetch("/assets/json/pictures.json")
-  .then((response) => response.json())
+const urlJson = "/assets/json/pictures.json";
+
+fetch(urlJson)
+  .then((data) => data.json())
   .then((proverbs) => {
     const constraction = document.querySelector(".composition__body");
 
