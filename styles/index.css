@@ -257,7 +257,7 @@ summary:before {
   top: 10px;
   right: 10px;
   color: transparent;
-  background: url("/proverbs/assets/images/down_chevron_icon_250483.svg") no-repeat 50% 50%/1em 1em;
+  background: url("../assets/images/down_chevron_icon_250483.svg") no-repeat 50% 50%/1em 1em;
   width: 1em;
   height: 1em;
   content: "";
@@ -311,7 +311,6 @@ body {
 }
 
 .containerM {
-  width: -moz-min-content;
   width: min-content;
   padding: 20px;
   display: block;
@@ -694,4 +693,4 @@ body {
     padding-left: 5%;
     padding-right: 5%;
   }
-}/*# sourceMappingURL=index.css.map */
+}
