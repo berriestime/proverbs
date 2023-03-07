@@ -537,7 +537,7 @@ constraction.addEventListener("click", (event) => {
     imageNode.classList.add("modal__image");
 
     const fragmentNode = document.createElement("img");
-    fragmentNode.src = `./assets/images/${urlNumber}.jpg`;
+    fragmentNode.src = `/proverbs/assets/images/${urlNumber}.jpg`;
 
     imageNode.append(fragmentNode);
 
