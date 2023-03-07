@@ -59,7 +59,6 @@ body._lock {
 }
 .composition__row {
   display: flex;
-  justify-content: space-around;
 }
 .composition__title {
   color: rgb(64, 46, 37);
@@ -67,6 +66,7 @@ body._lock {
   font-weight: bold;
   padding: 10px 20px 30px 20px;
   font-family: "Yeseva One";
+  margin-right: 40px;
 }
 .composition__body {
   display: grid;
@@ -130,20 +130,18 @@ body._lock {
   transition: all 0.6s ease;
 }
 
-#popup {
+.modal {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-}
-
-.modal {
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 15;
+  overflow: auto;
 }
 .modal__close {
   display: none;
@@ -201,7 +199,8 @@ body._lock {
   display: block;
   background: rgb(203, 156, 74);
   width: 900px;
-  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -258,7 +257,8 @@ summary:before {
   top: 10px;
   right: 10px;
   color: transparent;
-  background: url("/assets/images/free-icon-font-angle-down-3916886.svg") no-repeat 50% 50%/1em 1em;
+  background: url("../../assets/images/down_chevron_icon_250483.svg") no-repeat
+    50% 50%/1em 1em;
   width: 1em;
   height: 1em;
   content: "";
@@ -356,7 +356,7 @@ body {
 }
 
 .picturеНeader {
-  color: #C14318;
+  color: #c14318;
   font-size: 1.5625em;
 }
 
@@ -382,7 +382,7 @@ body {
 .btn {
   position: relative;
   display: block;
-  color: #C14318;
+  color: #c14318;
   font-size: 18px;
   text-decoration: none;
   text-align: center;
@@ -444,19 +444,23 @@ body {
 }
 
 .progress__bar__default {
-  filter: invert(79%) sepia(1%) saturate(0%) hue-rotate(153deg) brightness(85%) contrast(88%);
+  filter: invert(79%) sepia(1%) saturate(0%) hue-rotate(153deg) brightness(85%)
+    contrast(88%);
 }
 
 .progress-bar-colored {
-  filter: invert(60%) sepia(41%) saturate(243%) hue-rotate(169deg) brightness(83%) contrast(85%);
+  filter: invert(60%) sepia(41%) saturate(243%) hue-rotate(169deg)
+    brightness(83%) contrast(85%);
 }
 
 .progress__bar__true__quiz {
-  filter: invert(67%) sepia(34%) saturate(614%) hue-rotate(63deg) brightness(95%) contrast(97%);
+  filter: invert(67%) sepia(34%) saturate(614%) hue-rotate(63deg)
+    brightness(95%) contrast(97%);
 }
 
 .progress__bar__false__quiz {
-  filter: invert(47%) sepia(29%) saturate(4133%) hue-rotate(333deg) brightness(94%) contrast(85%);
+  filter: invert(47%) sepia(29%) saturate(4133%) hue-rotate(333deg)
+    brightness(94%) contrast(85%);
 }
 
 .question__desrciption__quiz {
@@ -494,7 +498,7 @@ body {
 .btn__quiz {
   position: relative;
   display: block;
-  color: #C14318;
+  color: #c14318;
   font-size: 18px;
   text-decoration: none;
   text-align: center;
