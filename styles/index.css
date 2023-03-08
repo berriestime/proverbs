@@ -141,7 +141,6 @@ body._lock {
   justify-content: center;
   align-items: center;
   z-index: 15;
-  overflow: auto;
 }
 .modal__close {
   display: none;
@@ -184,6 +183,7 @@ body._lock {
   text-transform: uppercase;
   margin-bottom: 5px;
   color: rgb(105, 74, 59);
+  color: rgb(64, 46, 37);
 }
 .modal__questions {
   margin: 0 auto;
@@ -194,13 +194,13 @@ body._lock {
   padding-top: 20px;
   padding-bottom: 20px;
   overflow: auto;
+  overflow-y: auto;
 }
 .modal__questions-item {
   display: block;
   background: rgb(203, 156, 74);
   width: 900px;
-  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -257,8 +257,7 @@ summary:before {
   top: 10px;
   right: 10px;
   color: transparent;
-  background: url("../../assets/images/down_chevron_icon_250483.svg") no-repeat
-    50% 50%/1em 1em;
+  background: url("../assets/images/down_chevron_icon_250483.svg") no-repeat 50% 50%/1em 1em;
   width: 1em;
   height: 1em;
   content: "";
@@ -312,7 +311,6 @@ body {
 }
 
 .containerM {
-  width: -moz-min-content;
   width: min-content;
   padding: 20px;
   display: block;
@@ -356,7 +354,7 @@ body {
 }
 
 .picturеНeader {
-  color: #c14318;
+  color: #C14318;
   font-size: 1.5625em;
 }
 
@@ -382,7 +380,7 @@ body {
 .btn {
   position: relative;
   display: block;
-  color: #c14318;
+  color: #C14318;
   font-size: 18px;
   text-decoration: none;
   text-align: center;
@@ -444,23 +442,19 @@ body {
 }
 
 .progress__bar__default {
-  filter: invert(79%) sepia(1%) saturate(0%) hue-rotate(153deg) brightness(85%)
-    contrast(88%);
+  filter: invert(79%) sepia(1%) saturate(0%) hue-rotate(153deg) brightness(85%) contrast(88%);
 }
 
 .progress-bar-colored {
-  filter: invert(60%) sepia(41%) saturate(243%) hue-rotate(169deg)
-    brightness(83%) contrast(85%);
+  filter: invert(60%) sepia(41%) saturate(243%) hue-rotate(169deg) brightness(83%) contrast(85%);
 }
 
 .progress__bar__true__quiz {
-  filter: invert(67%) sepia(34%) saturate(614%) hue-rotate(63deg)
-    brightness(95%) contrast(97%);
+  filter: invert(67%) sepia(34%) saturate(614%) hue-rotate(63deg) brightness(95%) contrast(97%);
 }
 
 .progress__bar__false__quiz {
-  filter: invert(47%) sepia(29%) saturate(4133%) hue-rotate(333deg)
-    brightness(94%) contrast(85%);
+  filter: invert(47%) sepia(29%) saturate(4133%) hue-rotate(333deg) brightness(94%) contrast(85%);
 }
 
 .question__desrciption__quiz {
@@ -498,7 +492,7 @@ body {
 .btn__quiz {
   position: relative;
   display: block;
-  color: #c14318;
+  color: #C14318;
   font-size: 18px;
   text-decoration: none;
   text-align: center;
@@ -577,7 +571,7 @@ body {
   height: auto;
   padding: 0;
   margin: 0;
-  background-image: url(/assets/images/proverbs.jpg);
+  background-image: url(/proverbs/assets/images/proverbs.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
   display: grid;
@@ -619,7 +613,7 @@ body {
 
 .indexabout {
   padding: 54px;
-  background-image: url(../assets/images/beb95faacb6c552be300a9855f7803f7.jpg);
+  background-image: url(/proverbs/assets/images/beb95faacb6c552be300a9855f7803f7.jpg);
   text-align: center;
 }
 
