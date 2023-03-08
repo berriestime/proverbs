@@ -577,7 +577,7 @@ body {
   height: auto;
   padding: 0;
   margin: 0;
-  background-image: url(../assets/images/proverbs.jpg);
+  background-image: url(/assets/images/proverbs.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
   display: grid;

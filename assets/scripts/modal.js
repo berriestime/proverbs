@@ -1,4 +1,4 @@
-const urlJson = "/assets/json/pictures.json";
+const urlJson = "./assets/json/pictures.json";
 
 fetch(urlJson)
   .then((data) => data.json())
