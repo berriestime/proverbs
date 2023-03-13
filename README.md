@@ -22,6 +22,7 @@ html, scss и JavaScript
 ## Использование:
 
 - Запустить проект через Git Pages
+  [Запустить сайт на GHPages](https://berriestime.github.io/proverbs/index.html)
 - насладиться тврочеством Брейгеля :)
 
 ## Над проектом работали:
