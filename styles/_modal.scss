@@ -199,16 +199,18 @@ body._lock {
     color: rgb(105, 74, 59);
     color: rgb(64, 46, 37);
   }
+  &__column-questions {
+    max-height: 70vh;
+    overflow: auto;
+    padding: 20px 0px;
+    margin: 20px 0px;
+  }
   &__questions {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    overflow: auto;
-    overflow-y: auto;
   }
   &__questions-item {
     p {
