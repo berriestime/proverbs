@@ -1,6 +1,6 @@
 let closeNode;
 
-const urlJson = "./assets/json/pictures.json";
+const urlJson = "/proverbs/assets/json/pictures.json";
 
 fetch(urlJson)
   .then((data) => data.json())
@@ -57,7 +57,7 @@ function printPopup(src, name, info, place, array) {
   imageNode.classList.add("modal__image");
 
   const fragmentNode = document.createElement("img");
-  fragmentNode.src = `./assets/images/${src}.jpg`;
+  fragmentNode.src = `/proverbs/assets/images/${src}.jpg`;
 
   imageNode.append(fragmentNode);
 
