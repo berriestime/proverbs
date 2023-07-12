@@ -187,9 +187,23 @@ body._lock {
 }
 .modal__column-questions {
   max-height: 70vh;
-  overflow: auto;
   padding: 20px 0px;
   margin: 20px 0px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  z-index: 0;
+  border-top: 0.2px dashed rgba(197, 204, 214, 0.2549019608);
+  border-bottom: 0.2px dashed rgba(197, 204, 214, 0.2549019608);
+}
+.modal__column-questions::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  background: rgba(197, 204, 214, 0.2549019608);
+}
+.modal__column-questions::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: rgba(125, 94, 10, 0.914);
 }
 .modal__questions {
   margin: 0 auto;

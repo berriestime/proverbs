@@ -200,11 +200,29 @@ body._lock {
     color: rgb(64, 46, 37);
   }
   &__column-questions {
-    max-height: 70vh;
-    overflow: auto;
+    max-height: 70vh;    
     padding: 20px 0px;
     margin: 20px 0px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    z-index: 0;
+    border-top: 0.2px dashed #c5ccd641;
+	  border-bottom: 0.2px dashed #c5ccd641;   
   }
+
+  &__column-questions::-webkit-scrollbar{
+    width: 10px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    background: #c5ccd641;
+  }
+
+  &__column-questions::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+	background-color: rgba(125, 94, 10, 0.914);
+  }
+
+
   &__questions {
     margin: 0 auto;
     display: flex;

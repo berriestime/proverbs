@@ -1,5 +1,6 @@
 {
   "liveServer.settings.mount": [
     ["/proverbs", "./"],
-  ]
+  ],
+  "liveServer.settings.port": 5502
 }
